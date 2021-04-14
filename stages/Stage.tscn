@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://gamegraphics/spritehhs.png" type="Texture" id=1]
+[ext_resource path="res://gamegraphics/layers/parallax-space-stars.png" type="Texture" id=2]
+[ext_resource path="res://gamegraphics/layers/parallax-space-big-planet.png" type="Texture" id=3]
+[ext_resource path="res://gamegraphics/layers/parallax-space-ring-planet.png" type="Texture" id=4]
+[ext_resource path="res://gamegraphics/layers/parallax-space-backgound.png" type="Texture" id=5]
+[ext_resource path="res://gamegraphics/layers/parallax-space-far-planets.png" type="Texture" id=6]
+[ext_resource path="res://hud.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 520, 40 )
+
+[node name="Stage" type="Node2D"]
+
+[node name="hud" type="CanvasLayer" parent="."]
+script = ExtResource( 7 )
+
+[node name="placar1" type="Label" parent="hud"]
+margin_left = 34.0
+margin_top = 40.0
+margin_right = 74.0
+margin_bottom = 54.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+text = "V"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="placar2" type="Label" parent="hud"]
+margin_left = 907.0
+margin_top = 40.0
+margin_right = 947.0
+margin_bottom = 54.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+text = "V"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layers" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="layers"]
+scale = Vector2( 3.76838, 3.74375 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="layers"]
+position = Vector2( 555, 363 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="layers"]
+position = Vector2( 392, 270 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 6 )
+
+[node name="Sprite4" type="Sprite" parent="layers"]
+position = Vector2( 201, 375 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="layers"]
+position = Vector2( 524, 299 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 2 )
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2( 512, 40 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( 0, -32 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall"]
+scale = Vector2( 9, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 58, 126, 34 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2( 512, 560 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( 0, 32 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall2"]
+scale = Vector2( 9, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 58, 126, 34 )

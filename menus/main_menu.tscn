@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+
+[node name="main_menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.33484
+margin_bottom = 1.33484
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="criar" type="Button" parent="main_menu"]
+margin_left = 217.0
+margin_top = 375.0
+margin_right = 427.0
+margin_bottom = 425.0
+text = "Criar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="entrar" type="Button" parent="main_menu"]
+margin_left = 565.0
+margin_top = 375.0
+margin_right = 775.0
+margin_bottom = 425.0
+text = "Entrar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jogadoreslista" type="ItemList" parent="main_menu"]
+margin_left = 353.0
+margin_top = 111.0
+margin_right = 643.0
+margin_bottom = 315.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ip" type="LineEdit" parent="main_menu"]
+margin_left = 744.0
+margin_top = 150.0
+margin_right = 887.0
+margin_bottom = 174.0
+
+[node name="nome" type="LineEdit" parent="main_menu"]
+margin_left = 744.0
+margin_top = 200.0
+margin_right = 922.0
+margin_bottom = 224.0
+
+[node name="lbip" type="Label" parent="main_menu"]
+margin_left = 667.0
+margin_top = 150.0
+margin_right = 733.0
+margin_bottom = 174.0
+text = "Ip:"
+align = 1
+valign = 1
+
+[node name="lbnome" type="Label" parent="main_menu"]
+margin_left = 667.0
+margin_top = 200.0
+margin_right = 733.0
+margin_bottom = 224.0
+text = "Nome:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ipshow" type="Label" parent="main_menu"]
+margin_left = 681.995
+margin_top = 256.321
+margin_right = 917.995
+margin_bottom = 289.321
+align = 1
+valign = 1
+
+[node name="comecar" type="Button" parent="main_menu"]
+margin_left = 391.0
+margin_top = 471.0
+margin_right = 601.0
+margin_bottom = 521.0
+text = "Começar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="main_menu/criar" to="main_menu" method="_on_criar_button_down"]
+[connection signal="button_down" from="main_menu/entrar" to="main_menu" method="_on_entrar_button_down"]
+[connection signal="button_down" from="main_menu/comecar" to="main_menu" method="_on_comecar_button_down"]
